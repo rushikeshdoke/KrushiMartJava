@@ -1,4 +1,4 @@
-package com.krushi.Repository;
+package com.krushi.repository;
 
 
 

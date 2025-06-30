@@ -11,8 +11,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.krushi.Repository.KrushiUserRepository;
+
 import com.krushi.model.KrushiUser;
+import com.krushi.repository.KrushiUserRepository;
 import com.krushi.service.KrushiUserService;
 import org.springframework.security.core.GrantedAuthority;
 
