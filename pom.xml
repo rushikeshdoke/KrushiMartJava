@@ -77,11 +77,7 @@
     <scope>runtime</scope>
 </dependency>
 		
-		<dependency>
-			<groupId>com.library</groupId>
-			<artifactId>Library-Management</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 	</dependencies>
 
 	<build>
