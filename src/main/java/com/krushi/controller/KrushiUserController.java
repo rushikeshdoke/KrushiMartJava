@@ -107,8 +107,6 @@ public class KrushiUserController {
 
 	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Token not provided");
 	}
-
-	
 	
 	
 
