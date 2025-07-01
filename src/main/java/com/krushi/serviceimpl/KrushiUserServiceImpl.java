@@ -23,7 +23,7 @@ import org.springframework.security.core.GrantedAuthority;
 public class KrushiUserServiceImpl implements KrushiUserService {
 
     @Autowired
-    private KrushiUserRepository krushiUserRepository;
+    KrushiUserRepository krushiUserRepository;
 
     @Autowired
     @Lazy
