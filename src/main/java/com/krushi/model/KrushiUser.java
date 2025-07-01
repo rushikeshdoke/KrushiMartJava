@@ -20,13 +20,13 @@ public class KrushiUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String userName;
+    private String username;
     private String email;
     private String contact;
     private String password;
 
     @Enumerated(EnumType.STRING)
-    private Role userType;
+    private Role role;
     
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
@@ -41,11 +41,11 @@ public class KrushiUser {
 	}
 
 	public String getUsername() {
-		return userName;
+		return username;
 	}
 
 	public void setUsername(String userName) {
-		this.userName = userName;
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -57,11 +57,11 @@ public class KrushiUser {
 	}
 
 	public Role getRole() {
-		return userType;
+		return role;
 	}
 
 	public void setRole(Role userType) {
-		this.userType = userType;
+		this.role = role;
 	}
 
 	public String getEmail() {
