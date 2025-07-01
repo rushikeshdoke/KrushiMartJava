@@ -74,10 +74,10 @@ public class KrushiUserController {
 
 	    // Build redirect URL based on role
 	    String redirectUrl = switch (role) {
-	        case ADMIN -> "/krushi/dashboard";
-	        case SELLER -> "/krushi/dashboard";
-	        case BUYER -> "/krushi/dashboard";
-	        case TRANSPORT -> "/krushi/dashboard";
+	        case ADMIN -> "/krushi/dashboard-admin";
+	        case SELLER -> "/krushi/dashboard-seller";
+	        case BUYER -> "/krushi/dashboard-buyer";
+	        case TRANSPORT -> "/krushi/dashboard-transport";
 	        default -> "/home";
 	    };
 
