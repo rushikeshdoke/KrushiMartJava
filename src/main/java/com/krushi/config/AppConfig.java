@@ -13,7 +13,7 @@ import com.krushi.service.KrushiUserService;
 
 @Configuration
 public class AppConfig {
-
+//asdfghjk
     @Autowired
     private KrushiUserService userService;
 
