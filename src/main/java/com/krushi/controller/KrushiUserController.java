@@ -71,6 +71,7 @@ public class KrushiUserController {
 
 	    KrushiUser user = krushiUserService.getUserByEmail(request.getEmail());
 	    Role role = user.getRole(); 
+	    String name=user.getUsername();
 
 	    // Build redirect URL based on role
 	    String redirectUrl = switch (role) {
@@ -85,7 +86,8 @@ public class KrushiUserController {
 	        jwt,
 	        "Login Successful",
 	        role,
-	        redirectUrl
+	        redirectUrl,
+	        name
 	    ));
 	}
 	
