@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.krushi.model.KrushiUser;
 import com.krushi.model.Role;
@@ -49,12 +52,22 @@ public class KrushiUserController {
 	private TokenService tokenService;
 
 	
-	@PostMapping(REGISTER)
-	public String registerUser(@RequestBody KrushiUser krushiUser) {
-		krushiUserService.registerUser(krushiUser);
-		return "Registration SuccsessFull...!";
-	}
+//	@PostMapping(REGISTER)
+//	public String registerUser(@RequestBody KrushiUser krushiUser) {
+//		krushiUserService.registerUser(krushiUser);
+//		return "Registration SuccsessFull...!";
+//	}
 	
+	//==================================================================================================
+	 @PostMapping(value = "/register", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	    public String registerUser(
+	        @RequestPart("user") KrushiUser krushiUser,
+	        @RequestPart(value = "image", required = false) MultipartFile imageFile) {
+
+	        krushiUserService.registerUser(krushiUser, imageFile);
+	        return "Registration Successful...!";
+	    }
+	//==================================================================================================
 	
 	@PostMapping(LOGIN)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody LoginRequest request) {
